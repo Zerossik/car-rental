@@ -1,49 +1,36 @@
-import List from '../List';
-import { CardWrap, StyledButton, StyledImg } from './Card.styled';
+import {
+  CardWrap,
+  StyledButton,
+  StyledImg,
+  SuportingList,
+  SuportingItem,
+  StyledTitle,
+  StyledPrice,
+  TitleWrap,
+} from './Card.styled';
 
-const data = {
-  id: 9629,
-  year: 2009,
-  make: 'Lamborghini',
-  model: 'Murcielago',
-  type: 'Convertible',
-  img: 'https://res.cloudinary.com/ditdqzoio/image/upload/v1687252635/cars/lamborghini_murcielago.webp',
-  description:
-    'The Lamborghini Murcielago is an exotic and high-performance convertible that represents the epitome of Italian automotive engineering, combining breathtaking design, blistering speed, and a spine-tingling exhaust note.',
-  fuelConsumption: '25.0',
-  engineSize: '6.5L V12',
-  accessories: [
-    'Carbon-fiber body panels',
-    'Alcantara upholstery',
-    'Lamborghini Infotainment System',
-  ],
-  functionalities: [
-    'All-Wheel Drive',
-    'Electronic Stability Control',
-    'Retractable soft-top roof',
-  ],
-  rentalPrice: '$500',
-  rentalCompany: 'Supercar Rentals',
-  address: '321 Example Road, Kharkiv, Ukraine',
-  rentalConditions:
-    "Minimum age: 30\nValid driver's license\nSecurity deposit and insurance required",
-  mileage: 5832,
-};
-const Card = () => {
+import defaultImage from '../../img/image-not-found.jpg';
+
+const Card = ({ data }) => {
   const adress = data.address.split(',');
   const sity = adress[1];
   const country = adress[2];
-
+  const { rentalCompany, type, model, id, make, img, year, rentalPrice } = data;
+  const suporting = [sity, country, rentalCompany, type, model, id];
   return (
     <CardWrap>
-      <StyledImg src={data.img} alt={data.model} />
-      <div>
-        <h3>
-          {data.model}, <span>{data.year}</span>
-        </h3>
-        <p>{data.rentalPrice}</p>
-      </div>
-      <List></List>
+      <StyledImg src={img ? img : defaultImage} alt={model} />
+      <TitleWrap>
+        <StyledTitle>
+          {make} <span style={{ color: '#3470FF' }}>{model}</span>, {year}
+        </StyledTitle>
+        <StyledPrice>{rentalPrice}</StyledPrice>
+      </TitleWrap>
+      <SuportingList>
+        {suporting.map((el, index) => (
+          <SuportingItem key={index}>{el}</SuportingItem>
+        ))}
+      </SuportingList>
       <StyledButton>Learn more</StyledButton>
     </CardWrap>
   );
