@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Card from '../../components/Card';
 import { getAllCars } from '../../services/api-cars';
 import { CatalogList, PagBtn } from './Catalog.styled';
@@ -6,18 +6,20 @@ import { CatalogList, PagBtn } from './Catalog.styled';
 const Catalog = () => {
   const [allCars, setAllCars] = useState([]);
   const [page, setPage] = useState(1);
-  // const isRenderRef = useRef(true);
+  const isRenderRef = useRef(true);
 
   useEffect(() => {
-    // if (isRenderRef.current) {
-    //   isRenderRef.current = false;
-    //   return;
-    // }
-    getAllCars(page).then(data => {
-      if (data) {
-        setAllCars(prev => [...prev, ...data]);
-      }
-    });
+    if (isRenderRef.current) {
+      isRenderRef.current = false;
+      return;
+    }
+    getAllCars(page)
+      .then(data => {
+        if (data) {
+          setAllCars(prev => [...prev, ...data]);
+        }
+      })
+      .catch(error => console.log(error.message));
   }, [page]);
 
   return (
