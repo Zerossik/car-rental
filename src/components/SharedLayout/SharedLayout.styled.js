@@ -4,6 +4,7 @@ export const Container = styled.div`
   width: 1240px;
   padding: 20px;
   margin: 0 auto;
+  text-align: center;
 `;
 
 export const Header = styled.header`
