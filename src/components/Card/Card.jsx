@@ -30,9 +30,9 @@ const data = {
   mileage: 5832,
 };
 const Card = () => {
-  // const adress = data.address.split(',');
-  // const sity = adress[1];
-  // const country = adress[2];
+  const adress = data.address.split(',');
+  const sity = adress[1];
+  const country = adress[2];
 
   return (
     <CardWrap>
