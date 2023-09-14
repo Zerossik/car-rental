@@ -9,7 +9,6 @@ const Catalog = () => {
   const isRenderRef = useRef(true);
 
   useEffect(() => {
-    console.log('effect git');
     if (isRenderRef.current) {
       isRenderRef.current = false;
       return;
@@ -26,11 +25,12 @@ const Catalog = () => {
   return (
     <>
       <CatalogList>
-        {allCars.map((el, index) => (
-          <li key={index}>
-            <Card data={el} />
-          </li>
-        ))}
+        {allCars.length > 0 &&
+          allCars.map((el, index) => (
+            <li key={index}>
+              <Card data={el} />
+            </li>
+          ))}
       </CatalogList>
       {allCars.length > 0 && (
         <PagBtn onClick={() => setPage(page + 1)}>Load more</PagBtn>
