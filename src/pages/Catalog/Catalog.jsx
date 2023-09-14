@@ -9,6 +9,7 @@ const Catalog = () => {
   const isRenderRef = useRef(true);
 
   useEffect(() => {
+    console.log("+")
     if (isRenderRef.current) {
       isRenderRef.current = false;
       return;
