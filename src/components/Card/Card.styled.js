@@ -6,11 +6,26 @@ export const CardWrap = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
+  position: relative;
+
   width: 274px;
   min-height: 450px;
   text-align: center;
 
   background-color: transparent;
+`;
+export const FavoritBtn = styled(Button)`
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  stroke: ${({ isFavorites }) => (!isFavorites ? '#fff' : 'none')};
+  stroke-opacity: 0.8;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  fill: ${({ isFavorites }) => (isFavorites ? '#3470FF' : 'none')};
 `;
 
 export const StyledImg = styled.img`
@@ -77,6 +92,6 @@ export const SuportingItem = styled.li`
   line-height: calc(18 / 12);
 
   &:not(:last-child) {
-    border-right: 1px solid red;
+    border-right: 1px solid rgba(18, 20, 23, 0.5);
   }
 `;

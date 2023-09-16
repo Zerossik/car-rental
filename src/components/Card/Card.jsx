@@ -1,5 +1,6 @@
 import {
   CardWrap,
+  FavoritBtn,
   StyledButton,
   StyledImg,
   SuportingList,
@@ -8,17 +9,36 @@ import {
   StyledPrice,
   TitleWrap,
 } from './Card.styled';
-
+import { ReactComponent as Icon } from '../../img/svg/normal.svg';
 import defaultImage from '../../img/image-not-found.jpg';
 
-const Card = ({ data }) => {
+const Card = ({ data, setFavorites, isLoading }) => {
   const adress = data.address.split(',');
   const sity = adress[1];
   const country = adress[2];
-  const { rentalCompany, type, model, id, make, img, year, rentalPrice } = data;
-  const suporting = [sity, country, rentalCompany, type, model, id];
+  const {
+    id,
+    rentalCompany,
+    type,
+    model,
+    mileage,
+    make,
+    img,
+    year,
+    rentalPrice,
+    isFavorites,
+  } = data;
+  const suporting = [sity, country, rentalCompany, type, model, mileage];
+
   return (
     <CardWrap>
+      <FavoritBtn
+        onClick={() => setFavorites(id)}
+        isFavorites={isFavorites}
+        isDisabled={isLoading}
+      >
+        <Icon width={18} height={18} />
+      </FavoritBtn>
       <StyledImg src={img ? img : defaultImage} alt={model} />
       <TitleWrap>
         <StyledTitle>
