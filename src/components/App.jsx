@@ -4,6 +4,7 @@ import HomePage from '../pages/Home';
 import { lazy, useEffect, useRef, useState } from 'react';
 
 const Catalog = lazy(() => import('../pages/Catalog'));
+const Favorites = lazy(() => import('../pages/Favorites'));
 
 const App = () => {
   const [favorites, setFavorites] = useState([]);
@@ -38,7 +39,16 @@ const App = () => {
             <Catalog addFavorit={addFavorites} dellFavorit={dellFavorit} />
           }
         />
-        <Route path="favorites" element={<div>Favorites</div>} />
+        <Route
+          path="favorites"
+          element={
+            <Favorites
+              collection={favorites}
+              dellFavorit={dellFavorit}
+              setCollection={setFavorites}
+            />
+          }
+        />
         <Route path="*" element={<Navigate to="/" />} />
       </Route>
     </Routes>
