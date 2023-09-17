@@ -14,6 +14,7 @@ import defaultImage from '../../img/image-not-found.jpg';
 import { getAdvertById, updateAdvert } from '../../services/api-cars';
 import { useState } from 'react';
 import Modal from '../Modal';
+import LearnMore from '../LearnMore/LearnMore';
 
 const Card = ({ data, addFavorit, dellFavorit, collection, setCollection }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -95,7 +96,11 @@ const Card = ({ data, addFavorit, dellFavorit, collection, setCollection }) => {
         ))}
       </SuportingList>
       <StyledButton onClick={handlerLearnMore}>Learn more</StyledButton>
-      {isOpen && <Modal openModal={handlerLearnMore}></Modal>}
+      {isOpen && (
+        <Modal openModal={handlerLearnMore}>
+          <LearnMore card={data} />
+        </Modal>
+      )}
     </CardWrap>
   );
 };
