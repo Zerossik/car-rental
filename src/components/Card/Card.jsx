@@ -16,7 +16,14 @@ import { useState } from 'react';
 import Modal from '../Modal';
 import LearnMore from '../LearnMore/LearnMore';
 
-const Card = ({ data, addFavorit, dellFavorit, collection, setCollection }) => {
+const Card = ({
+  data,
+  addFavorit,
+  dellFavorit,
+  collection,
+  setCollection,
+  setFilteredCollection,
+}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const adress = data.address.split(',');
@@ -72,6 +79,7 @@ const Card = ({ data, addFavorit, dellFavorit, collection, setCollection }) => {
   const handlerLearnMore = () => {
     setIsOpen(!isOpen);
   };
+  console.log(isFavorites);
   return (
     <CardWrap>
       <FavoritBtn

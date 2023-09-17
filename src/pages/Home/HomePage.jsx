@@ -1,6 +1,7 @@
+import { Container } from './HomePage.styled';
 const HomePage = () => {
   return (
-    <div>
+    <Container>
       <h1>About us</h1>
       <p>
         "Car-rental" company welcomes you! We are pleased to offer you a
@@ -24,7 +25,7 @@ const HomePage = () => {
         journey enjoyable and hassle-free. Contact us today and reserve your
         car!
       </p>
-    </div>
+    </Container>
   );
 };
 
