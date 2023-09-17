@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/car-rental/static/css/main.aabd3df3.css",
-    "main.js": "/car-rental/static/js/main.8b1f5e6b.js",
-    "static/js/833.bcdd3aee.chunk.js": "/car-rental/static/js/833.bcdd3aee.chunk.js",
-    "static/js/297.9d50ce94.chunk.js": "/car-rental/static/js/297.9d50ce94.chunk.js",
+    "main.js": "/car-rental/static/js/main.e5a3635d.js",
+    "static/js/702.8424c41f.chunk.js": "/car-rental/static/js/702.8424c41f.chunk.js",
+    "static/js/297.48208150.chunk.js": "/car-rental/static/js/297.48208150.chunk.js",
     "static/js/693.49cd9770.chunk.js": "/car-rental/static/js/693.49cd9770.chunk.js",
-    "static/js/429.8711db6f.chunk.js": "/car-rental/static/js/429.8711db6f.chunk.js",
+    "static/js/450.7639f2fa.chunk.js": "/car-rental/static/js/450.7639f2fa.chunk.js",
     "static/media/image-not-found.jpg": "/car-rental/static/media/image-not-found.3042ea310c24d41cdf27.jpg",
+    "static/media/icon.svg": "/car-rental/static/media/icon.127f5022cd05c14ed80a28814e112936.svg",
     "index.html": "/car-rental/index.html",
-    "static/media/icon.svg": "/car-rental/static/media/icon.075d5e12ce2cb281750883f893e574c6.svg",
     "main.aabd3df3.css.map": "/car-rental/static/css/main.aabd3df3.css.map",
-    "main.8b1f5e6b.js.map": "/car-rental/static/js/main.8b1f5e6b.js.map",
-    "833.bcdd3aee.chunk.js.map": "/car-rental/static/js/833.bcdd3aee.chunk.js.map",
-    "297.9d50ce94.chunk.js.map": "/car-rental/static/js/297.9d50ce94.chunk.js.map",
+    "main.e5a3635d.js.map": "/car-rental/static/js/main.e5a3635d.js.map",
+    "702.8424c41f.chunk.js.map": "/car-rental/static/js/702.8424c41f.chunk.js.map",
+    "297.48208150.chunk.js.map": "/car-rental/static/js/297.48208150.chunk.js.map",
     "693.49cd9770.chunk.js.map": "/car-rental/static/js/693.49cd9770.chunk.js.map",
-    "429.8711db6f.chunk.js.map": "/car-rental/static/js/429.8711db6f.chunk.js.map"
+    "450.7639f2fa.chunk.js.map": "/car-rental/static/js/450.7639f2fa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aabd3df3.css",
-    "static/js/main.8b1f5e6b.js"
+    "static/js/main.e5a3635d.js"
   ]
 }
